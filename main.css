@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(22, 24, 46);
+}
+
+.dot {
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    background: limegreen;
+    position: absolute;
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+}
+
+.dot::before {
+    content: "";
+    display: block;
+    width: inherit;
+    height: inherit;
+    box-shadow: 0 0 4px limegreen inset;
+    border-radius: 100%;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+.dot-move {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: crimson;
+    position: absolute;
+}
+
+.lineY {
+    width: 1px;
+    height: 100vh;
+    background: white;
+    position: absolute;
+    top: 0;
+}
+
+.lineX {
+    width: 100vw;
+    height: 1px;
+    background: white;
+    position: absolute;
+    left: 0;
+}
+
+
+@keyframes pulse {
+    from {}
+    to {
+        transform: scale(20, 20);
+    }
+}
