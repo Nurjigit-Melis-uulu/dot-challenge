@@ -2,8 +2,9 @@ let dot = document.querySelector(".dot");
 let dotMove = document.querySelector(".dot-move");
 let lineX = document.querySelector(".lineX");
 let lineY = document.querySelector(".lineY");
-let button = document.querySelector("#button");
-let doteBox = document.querySelector('.dot-box');
+let createButton = document.querySelector("#create");
+let clearButton = document.querySelector("#clear");
+let dotBox = document.querySelector('.dot-box');
 let creatingStatus = false;
 
 document.addEventListener("click", event => {
@@ -26,7 +27,7 @@ document.addEventListener("click", event => {
     element.className = "dot";
     element.style.left = `${event.clientX - dot.clientWidth / 2}px`;
     element.style.top = `${event.clientY - dot.clientHeight / 2}px`;
-    doteBox.append(element);
+    dotBox.append(element);
   }
 });
 
@@ -62,11 +63,15 @@ document.addEventListener("mousemove", event => {
   }
 });
 
-button.addEventListener("click", () => {
+createButton.addEventListener("click", () => {
   creatingStatus = !creatingStatus;
   if (creatingStatus) {
-    button.innerHTML = "Creating element is true"
+    createButton.innerHTML = "Creating element is true"
   } else {
-    button.innerHTML = "Creating element is false"
+    createButton.innerHTML = "Creating element is false"
   }
+});
+
+clearButton.addEventListener("click", () => {
+  dotBox.innerHTML = "";
 });
